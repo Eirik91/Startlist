@@ -18,7 +18,11 @@ namespace Startlist
             {
                 StartNo = number;
             }
-
+            else
+            {
+                StartNo = -1;
+            }
+            
             Name = values[1];
             Club = values[2];
             Nationality = values[3];
@@ -38,7 +42,12 @@ namespace Startlist
 
         public void Show()
         {
-            Console.WriteLine(StartNo+": " + Name + " (" + Club + ") " + Nationality + " - " + Group + " - " + Class);
+            Console.WriteLine(GetText());
+        }
+
+        public string GetText()
+        {
+            return StartNo + ": " + Name + " (" + Club + ") " + Nationality + " - " + Group + " - " + Class;
         }
     }
 }
